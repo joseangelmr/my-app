@@ -1,0 +1,7 @@
+---
+repo_url: https://github.com/joseangelmr/my-app.git
+repo_version: master
+app_name: my-app
+nginx_servers: ["localhost:9000"]
+deploy_dir: "~/repos/{{ app_name }}"
+versionApp: "0.0.1"

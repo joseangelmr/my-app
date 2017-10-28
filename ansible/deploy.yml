@@ -1,0 +1,10 @@
+---
+- name: Deploy application
+  hosts: aws-server
+  vars_files:
+    - ["vars/default.yml"]
+  tasks:
+    - name: clone repository
+      git: 
+        repo={{repo_url}}
+        dest={{deploy_dir}}
