@@ -1,6 +1,8 @@
 machine:
   timezone:
     America/Santiago
+  node:
+    version: 6
 dependencies:
   override:
     - yarn
