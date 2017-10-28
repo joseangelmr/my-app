@@ -24,4 +24,4 @@ deployment:
   prod:
     branch: master
     commands:
-      - ansible-playbook ansible/deploy.yml
+      - ansible-playbook ansible/deploy.yml -vvv
