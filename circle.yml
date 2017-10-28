@@ -1,0 +1,13 @@
+machine:
+  timezone:
+    America/Santiago
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+test:
+  pre:
+    - yarn
+  override:
+    - yarn test
