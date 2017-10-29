@@ -3,7 +3,7 @@
   hosts: aws-server
   vars_files:
     - ["vars/default.yml"]
-  sudo: yes
+  become: True
   tasks:
     - name: Create a data container
       docker_container:
