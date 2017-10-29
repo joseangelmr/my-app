@@ -12,8 +12,8 @@ jobs:
         - run:
           name: docker login
           command: |
-          docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+            - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
         - run:
           name: docker build
           command: |
-          docker build -t my-app .
+            - docker build -t my-app .
