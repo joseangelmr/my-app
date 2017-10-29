@@ -3,13 +3,10 @@ jobs:
     build:
       working_directory: ~/repo
       docker:
-        - image: circleci/node:7
-        - image: jonbaldie/yarn:latest
+        - ansible/ansible:ubuntu1604
       steps:
         - checkout
         - setup_remote_docker
-        - run : yarn install
-        - run : yarn test
         - run : docker info
         - run :
             name: docker login
@@ -23,3 +20,6 @@ jobs:
         - run:
             name: docker push image
             command: "docker push joseangelmr/my-app:latest"
+        - run:
+            name: server deploy
+            command: "ansible-playbook ansible/deploy.yml"

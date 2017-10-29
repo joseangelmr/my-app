@@ -3,8 +3,15 @@
   hosts: aws-server
   vars_files:
     - ["vars/default.yml"]
+  become: yes
   tasks:
-    - name: clone repository
-      git: 
-        repo={{repo_url}}
-        dest={{deploy_dir}}
+    - name: Create a data container
+      docker_container:
+        name: my-app
+        image: joseangelmr/my-app:latest
+        recreate: yes
+        pull: yes
+        ports:
+          - 3000:3000
+        volumes:
+          - /data
