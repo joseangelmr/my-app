@@ -23,4 +23,4 @@ jobs:
         #     command: "docker push joseangelmr/my-app:latest"
         - run:
             name: server deploy
-            command: "sudo easy_install pip && sudo pip install ansible && ansible-playbook ansible/deploy.yml"
+            command: "sudo apt-get install python-setuptools && sudo easy_install pip && sudo pip install ansible && ansible-playbook ansible/deploy.yml"
