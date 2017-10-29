@@ -1,6 +1,7 @@
 version: 2
 jobs:
     build:
+      machine: true
       working_directory: ~/repo
       docker:
         - image: circleci/node:7
@@ -9,6 +10,7 @@ jobs:
         - checkout
         - run : yarn install
         - run : yarn test
+        - run : sudo docker info
         - run :
             name: docker login
             command: "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD"
