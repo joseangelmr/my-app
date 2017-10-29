@@ -5,9 +5,9 @@ jobs:
       docker:
         - image: circleci/node:7
         - image: jonbaldie/yarn:latest
-        - image: docker/docker:latest
       steps:
         - checkout
+        - setup_remote_docker
         - run : yarn install
         - run : yarn test
         - run : docker info
