@@ -3,6 +3,7 @@ jobs:
     build:
       working_directory: ~/repo
       docker:
+        - image: circleci/node:7
         - image: ansible/ansible:ubuntu1604
       steps:
         - checkout
