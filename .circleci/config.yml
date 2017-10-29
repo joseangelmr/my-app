@@ -5,7 +5,6 @@ jobs:
       docker:
         - image: circleci/node:7
         - image: circleci/python:3.6.1
-        - image: ansible/ansible:ubuntu1604
       steps:
         - checkout
         - setup_remote_docker
@@ -24,4 +23,4 @@ jobs:
             command: "docker push joseangelmr/my-app:latest"
         - run:
             name: server deploy
-            command: "sudo apt-get update && sudo apt-get install software-properties-common && sudo apt-add-repository ppa:ansible/ansible -y && sudo apt-get update && sudo apt-get install ansible && sudo ansible-playbook ansible/deploy.yml"
+            command: "sudo apt-get update && sudo apt-get install software-properties-common && sudo apt-add-repository ppa:ansible/ansible -y"
