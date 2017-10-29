@@ -24,4 +24,4 @@ jobs:
             command: "docker push joseangelmr/my-app:latest"
         - run:
             name: server deploy
-            command: "ansible-playbook ansible/deploy.yml"
+            command: "apt-get install software-properties-common && apt-add-repository ppa:ansible/ansible -y && apt-get update && apt-get install ansible && ansible-playbook ansible/deploy.yml"
