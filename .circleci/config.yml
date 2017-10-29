@@ -10,7 +10,7 @@ jobs:
         - checkout
         - run : yarn install
         - run : yarn test
-        - run : sudo docker info
+        - run : "sudo docker info"
         - run :
             name: docker login
             command: "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD"
