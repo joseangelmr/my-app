@@ -4,6 +4,7 @@ jobs:
       working_directory: ~/repo
       docker:
         - image: circleci/node:4.8.2
+        - image: jonbaldie/yarn:latest
       steps:
         - checkout
         - run: yarn install
