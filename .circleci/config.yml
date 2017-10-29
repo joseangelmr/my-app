@@ -19,4 +19,4 @@ jobs:
             command: "docker build -t my-app ."
         - run:
             name: docker push image
-            command: "docker push joseangelmr/my-app:$CIRCLE_BRANCH"
+            command: "docker push joseangelmr/my-app:latest"
