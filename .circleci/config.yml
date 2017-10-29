@@ -18,5 +18,8 @@ jobs:
             name: docker build
             command: "docker build -t my-app ."
         - run:
+            name: docker create tag
+            command: "docker tag my-app joseangelmr/my-app:latest"
+        - run:
             name: docker push image
             command: "docker push joseangelmr/my-app:latest"
